@@ -37,8 +37,6 @@
 
 -define(EJABBERD_URI, <<"http://www.process-one.net/en/ejabberd/">>).
 
--define(S2STIMEOUT, 600000).
-
 %%-define(DBGFSM, true).
 
 -record(scram,

@@ -2007,7 +2007,7 @@ enc_utc(Val) ->
     jlib:now_to_utc_string(Val).
 
 dec_jid(Val) ->
-    case jlib:string_to_jid(Val) of
+    case jlib:binary_to_jid(Val) of
         error ->
             erlang:error(badarg);
         J ->
@@ -2015,7 +2015,7 @@ dec_jid(Val) ->
     end.
 
 enc_jid(J) ->            
-    jlib:jid_to_string(J).
+    jlib:jid_to_binary(J).
 
 resourceprep(R) ->
     case jlib:resourceprep(R) of

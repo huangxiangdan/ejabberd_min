@@ -1765,10 +1765,10 @@ resourceprep(R) ->
       R1 -> R1
     end.
 
-enc_jid(J) -> jlib:jid_to_string(J).
+enc_jid(J) -> jlib:jid_to_binary(J).
 
 dec_jid(Val) ->
-    case jlib:string_to_jid(Val) of
+    case jlib:binary_to_jid(Val) of
       error -> erlang:error(badarg);
       J -> J
     end.

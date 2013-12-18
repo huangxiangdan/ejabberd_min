@@ -927,7 +927,7 @@ bookmark_conference() ->
 
 socks5_connect(#streamhost{host = Host, port = Port},
                {SID, JID1, JID2}) ->
-    Hash = p1_sha:sha([SID, jlib:jid_to_string(JID1), jlib:jid_to_string(JID2)]),
+    Hash = p1_sha:sha([SID, jlib:jid_to_binary(JID1), jlib:jid_to_binary(JID2)]),
     {ok, Sock} = gen_tcp:connect(binary_to_list(Host), Port,
                                  [binary, {active, false}]),
     Init = <<?VERSION_5, 1, ?AUTH_ANONYMOUS>>,
